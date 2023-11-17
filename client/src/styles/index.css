@@ -1,0 +1,1016 @@
+.Navbar {
+  padding: 1.75rem 4.6rem 1rem 2.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Navbar .logo {
+  width: 10.25rem;
+}
+.Navbar .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+.Navbar .nav-link {
+  text-decoration: none;
+  color: #fff;
+  transition: all;
+  cursor: pointer;
+}
+.Navbar .nav-link.heading-3.icon {
+  font-size: 1.4em;
+}
+
+.Footer {
+  padding: 6.6rem 7.2rem 2.2rem 7.2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-self: flex-end;
+}
+.Footer .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Footer .logo {
+  width: 7.7rem;
+}
+.Footer .footer-links {
+  display: flex;
+  gap: 2.8rem;
+  list-style: none;
+}
+.Footer .footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+.Footer .some-links {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.5em;
+  color: #252525;
+}
+.Footer .divider {
+  width: 100%;
+  height: 0.18rem;
+  background-color: #252525;
+  margin-block: 1.3rem;
+}
+.Footer .payment-options {
+  align-self: flex-end;
+  font-size: 1.5em;
+  display: flex;
+  gap: 0.5rem;
+  color: #a3a3a3;
+}
+.Footer p.small {
+  color: #a3a3a3;
+  align-self: center;
+}
+
+.CallToAction {
+  background: #252525;
+  border-radius: 0.5rem;
+  margin-inline: 7rem;
+  padding: 4.3rem 12.4rem 2.4rem 12.4rem;
+}
+.CallToAction .heading-1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.CallToAction .search-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.CallToAction .search-form button {
+  align-self: flex-end;
+}
+.CallToAction .inputs {
+  display: flex;
+  gap: 2rem;
+}
+
+.Testimonials {
+  margin-top: 3rem;
+  width: 100%;
+}
+.Testimonials .carousel {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.TestimonialCard {
+  background: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  display: flex;
+  gap: 1.3rem;
+}
+.TestimonialCard .venue {
+  flex: 1;
+}
+.TestimonialCard .column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+.TestimonialCard .stars {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.3em;
+  align-self: center;
+}
+
+.ContactForm {
+  width: 100%;
+  background-color: #252525;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ContactForm .body {
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 30rem;
+}
+.ContactForm textarea {
+  height: 9rem;
+}
+.ContactForm button {
+  align-self: flex-end;
+}
+
+.Home h3 {
+  margin-bottom: 1.5rem;
+}
+.Home .slogan {
+  margin-block: 4rem;
+  text-align: center;
+}
+.Home .popular-venues {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.Home .venues {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+.Home .nav-btn {
+  align-self: center;
+}
+.Home .about {
+  margin-inline: -6rem;
+  margin-block: 5rem;
+  background: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
+  border-radius: 0.5rem;
+  padding: 3rem 6rem;
+}
+.Home .d-flex {
+  gap: 3.5rem;
+}
+.Home .d-flex img {
+  min-width: 42rem;
+  height: 18rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
+}
+.Home .contact {
+  width: 100%;
+  display: flex;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.Home .find-us {
+  width: 45%;
+  background: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
+  text-align: center;
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Home .maps {
+  margin-top: 3rem;
+  height: 23rem;
+}
+
+.VenueCard {
+  position: relative;
+  width: 18rem;
+  height: 18rem;
+  background-color: #252525;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  color: #fff;
+  text-decoration: none;
+}
+.VenueCard .like {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.7rem;
+  font-size: 1.7em;
+}
+.VenueCard img {
+  max-width: 100%;
+  height: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.VenueCard .dark-overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background: linear-gradient(180deg, rgba(26, 26, 26, 0.69) 27.49%, rgba(0, 0, 0, 0) 87.65%);
+}
+.VenueCard .overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12rem;
+  background: rgba(108, 108, 108, 0.4);
+  opacity: 1;
+  transition: opacity 0.2s ease-in;
+}
+.VenueCard .info {
+  padding: 0.5rem 1.25rem;
+}
+.VenueCard .top {
+  display: flex;
+  justify-content: space-between;
+}
+.VenueCard .d-flex-gap {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.VenueCard:hover .overlay {
+  opacity: 0;
+}
+
+.GoogleMaps {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.GoogleMaps #embed-ded-map-canvas {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+}
+.GoogleMaps iframe {
+  height: 100%;
+  width: 100%;
+  border: 0;
+}
+.GoogleMaps .overlay {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.24);
+}
+
+.SearchBar {
+  width: 100%;
+  background: #252525;
+  border-radius: 0.5rem;
+  padding: 2rem 3rem;
+  margin-bottom: 2rem;
+}
+.SearchBar .inputs {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.SearchBar .icon {
+  margin-left: 0.7rem;
+  font-size: 0.7em;
+}
+.SearchBar .options {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.AllVenues .heading-2 {
+  margin-bottom: 1.5rem;
+}
+.AllVenues .icon {
+  margin-right: 0.5rem;
+}
+.AllVenues .venues {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.ImageCarousel .top {
+  margin-block: 0.5rem 1rem;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+.ImageCarousel .top * {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.ImageCarousel .maps {
+  max-width: 33.7rem;
+  flex: 1;
+}
+.ImageCarousel .main-image {
+  width: 42.4rem;
+  height: 26.5rem;
+}
+.ImageCarousel .main-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ImageCarousel .thumbnails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #a3a3a3;
+}
+.ImageCarousel .thumbnails img {
+  width: 9.5rem;
+  height: 6.4rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease-out;
+}
+.ImageCarousel .thumbnails img:hover {
+  transform: scale(1.06);
+}
+.ImageCarousel .active {
+  border: 3px solid #fff;
+}
+
+.VenueDetails {
+  margin-top: 2rem;
+}
+.VenueDetails .name {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+.VenueDetails .like {
+  gap: 0.5rem;
+}
+.VenueDetails .main {
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+}
+.VenueDetails .main .left,
+.VenueDetails .main .right {
+  flex: 1;
+}
+.VenueDetails .main .right {
+  display: flex;
+  flex-direction: column;
+}
+.VenueDetails .grouping {
+  margin-bottom: 2rem;
+}
+.VenueDetails .grouping .heading-2 {
+  margin-bottom: 1.3rem;
+}
+.VenueDetails .icons {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+.VenueDetails .icon-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.VenueDetails .icon {
+  font-size: 1.4em;
+}
+.VenueDetails .list {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.VenueDetails .equipment-list {
+  background: #252525;
+  border-radius: 0.5rem;
+  padding: 1.5rem 2rem;
+  margin-top: 1rem;
+}
+.VenueDetails .equipment-list .small {
+  margin-bottom: 0.5rem;
+}
+.VenueDetails .chevron {
+  font-size: 0.8em;
+}
+.VenueDetails .furniture-arrangements {
+  margin-top: 3rem;
+  display: flex;
+  gap: 4rem;
+}
+.VenueDetails .furniture-arrangements .flex-column {
+  justify-content: space-between;
+}
+.VenueDetails .room-icon {
+  width: 5rem;
+  margin-bottom: 0.7rem;
+}
+.VenueDetails .bookingForm {
+  background-color: #252525;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.5rem;
+}
+.VenueDetails .input-group:first-of-type {
+  margin-top: 3rem;
+}
+.VenueDetails .checkbox-group {
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+.VenueDetails .pricing {
+  margin-block: 3rem 1rem;
+  width: 100%;
+}
+.VenueDetails .d-flex {
+  margin-bottom: 0.5rem;
+}
+.VenueDetails .btn-primary {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.VenueDetails .contact-info {
+  margin-top: 1.5rem;
+  background: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
+  border-radius: 0.5rem;
+  padding: 2rem 3rem;
+  display: flex;
+}
+
+.ConfirmBooking h1 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.ConfirmBooking .confirm-wrapper {
+  width: 100%;
+  display: flex;
+  gap: 3rem;
+  background-color: #121212;
+}
+.ConfirmBooking .venue-card {
+  max-width: 23.75rem;
+  width: 100%;
+  background-color: #252525;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.ConfirmBooking .venue-card .img-wrapper {
+  width: 100%;
+  height: 12rem;
+}
+.ConfirmBooking .venue-card .img-wrapper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ConfirmBooking .icon-group {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.ConfirmBooking .icon {
+  color: #a3a3a3;
+}
+.ConfirmBooking .contact {
+  background: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
+  width: 100%;
+}
+.ConfirmBooking .contact .heading-2 {
+  margin-bottom: 0.6rem;
+}
+.ConfirmBooking .info-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ConfirmBooking .info-card .top {
+  display: flex;
+  gap: 2rem;
+}
+.ConfirmBooking .info-card .left,
+.ConfirmBooking .info-card .right {
+  flex: 1;
+}
+.ConfirmBooking .info-card .grouping {
+  margin-bottom: 1rem;
+}
+.ConfirmBooking .info-card .grouping .heading-2 {
+  margin-bottom: 0.7rem;
+}
+.ConfirmBooking .ameneties {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+.ConfirmBooking .ameneties .icon-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ConfirmBooking .ameneties .icon {
+  font-size: 1.4em;
+}
+.ConfirmBooking .bookingForm {
+  display: flex;
+  flex-direction: column;
+  align-items: c;
+}
+.ConfirmBooking .bookingForm .input-group textarea {
+  height: 100%;
+}
+.ConfirmBooking .bookingForm .buttons {
+  align-self: flex-end;
+}
+
+.Confirmation {
+  margin: 2rem auto;
+  background: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
+  max-width: 60rem;
+  height: 30rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 13rem;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.Confirmation .heading-1 {
+  margin-bottom: 0.7rem;
+}
+.Confirmation .icon {
+  color: #ce6ad0;
+  font-size: 5em;
+}
+
+.BookingCard {
+  width: 100%;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+}
+.BookingCard .left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 1rem;
+}
+.BookingCard .right {
+  width: 100%;
+  max-width: 25.4rem;
+  max-height: 13rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.BookingCard .right img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.BookingCard.current {
+  background-color: #252525;
+}
+
+.BookingCard.previous {
+  background-color: #121212;
+  color: #a3a3a3;
+  border: 4px solid #252525;
+}
+
+.Profile {
+  margin-top: 1rem;
+}
+.Profile section {
+  margin-bottom: 2rem;
+}
+.Profile section .d-flex:first-child {
+  margin-bottom: 2rem;
+}
+.Profile .current-bookings {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.BookingDetails {
+  margin-top: 1.6rem;
+}
+.BookingDetails .venue {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #171717;
+  border-radius: 0.5rem;
+}
+.BookingDetails .venue .top {
+  display: flex;
+  justify-content: space-between;
+}
+.BookingDetails .icon-group {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.BookingDetails .icon {
+  color: #a3a3a3;
+}
+.BookingDetails .venue .top .left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.BookingDetails .venue .top .right {
+  display: flex;
+  gap: 1rem;
+}
+.BookingDetails .venue .top .right .img-l {
+  width: 37.8rem;
+  height: 20rem;
+}
+.BookingDetails .venue .top .right .img-s {
+  width: 17rem;
+  height: 9.5rem;
+}
+.BookingDetails .venue .top .right img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 0.5rem;
+}
+.BookingDetails .smaller {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.BookingDetails .amenities {
+  display: flex;
+  gap: 1.5rem;
+}
+.BookingDetails .icon-column {
+  gap: 0.6rem;
+}
+.BookingDetails .icon-column .icon {
+  font-size: 1.4em;
+}
+.BookingDetails .venue .bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.9rem;
+}
+.BookingDetails .venue .bottom .left {
+  width: 100%;
+  flex: 2;
+}
+.BookingDetails .venue .bottom .right {
+  width: 100%;
+  flex: 3;
+}
+.BookingDetails .contact-card {
+  width: 100%;
+  margin-top: 1.5rem;
+  background: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
+  border-radius: 0.5rem;
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.BookingDetails .info-group {
+  margin-top: 2rem;
+}
+.BookingDetails .location {
+  margin-top: 3rem;
+}
+.BookingDetails .location .top {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+.BookingDetails .location .top .image {
+  width: 100%;
+  max-width: 34.5rem;
+  height: 18rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.BookingDetails .location .top .image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.BookingDetails .directions {
+  width: 100%;
+  background: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+.BookingDetails .vehicles {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.BookingDetails .vehicle-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.BookingDetails .vehicle-group .icon {
+  font-size: 3em;
+  color: #a3a3a3;
+  margin-bottom: 1rem;
+}
+.BookingDetails .maps {
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  height: 25rem;
+}
+.BookingDetails .billing {
+  margin-top: 2rem;
+  background-color: #252525;
+  border-radius: 0.5rem;
+  padding: 2rem 3rem;
+}
+.BookingDetails .price-table {
+  margin-top: 3rem;
+  width: 100%;
+  border-spacing: 0 1rem;
+}
+.BookingDetails .price-table .text-l {
+  text-align: left;
+  width: 30%;
+}
+.BookingDetails .price-table .text-r {
+  text-align: right;
+}
+.BookingDetails .price-table .divider {
+  border-bottom: 1px solid #a3a3a3;
+}
+.BookingDetails .price-table .bold {
+  font-weight: 700;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: #121212;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.masthead img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.wrapper {
+  max-width: 100%;
+  padding: 0 6rem;
+  flex: 1;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 0.7rem;
+}
+
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(232deg, #DC84DE -0.46%, #CE6AD0 46.2%, #C64FC8 89.11%);
+  padding: 0.7rem 2.75rem;
+  border-radius: 1.25rem;
+  border: none;
+  outline: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: #ce6ad0;
+}
+.btn-primary:active {
+  background: #ce6ad0;
+}
+
+.btn-secondary {
+  color: #fff;
+  background: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
+  padding: 0.7rem 2.75rem;
+  border-radius: 1.25rem;
+  border: none;
+  outline: none;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background: #ce6ad0;
+}
+.btn-secondary:active {
+  background: #ce6ad0;
+}
+
+.heading-1 {
+  font-size: 1.75em;
+  font-weight: 700;
+}
+
+.heading-2 {
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.heading-3 {
+  font-size: 0.9em;
+  font-weight: 700;
+  line-height: 23.8px;
+}
+
+.disabled {
+  color: #a3a3a3;
+}
+
+.body {
+  font-size: 1.25em;
+  font-weight: 400;
+  line-height: 34px;
+}
+
+.small {
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 23.8px;
+}
+
+.link {
+  font-size: 0.8em;
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  background-color: #171717;
+  color: #fff;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.input-group textarea {
+  resize: none;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.checkbox-group input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background-color: #171717;
+  font: inherit;
+  color: #fff;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.1em solid #fff;
+  border-radius: 0.25em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+.checkbox-group input[type=checkbox]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #fff;
+  transform-origin: bottom left;
+  -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox-group input[type=checkbox]:checked::before {
+  transform: scale(1);
+}
+
+.error-message {
+  color: #a3a3a3;
+}
+
+.success-message {
+  color: rgb(152, 228, 152);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
+}/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,23 @@
+.ContactForm {
+  width: 100%;
+  background-color: $contrast-background-color;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .body {
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 30rem;
+  }
+
+  textarea {
+    height: 9rem;
+  }
+
+
+  button {
+    align-self: flex-end;
+  }
+}

@@ -1,0 +1,25 @@
+.SearchBar {
+  width: 100%;
+  background: $contrast-background-color;
+  border-radius: $border-radius;
+  padding: 2rem 3rem;
+  margin-bottom: 2rem;
+
+  .inputs {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .icon {
+    margin-left: .7rem;
+    font-size: .7em;
+  }
+
+  .options {
+    margin-top: .7rem;
+    display: flex;
+    gap: 2rem;
+  }
+
+}

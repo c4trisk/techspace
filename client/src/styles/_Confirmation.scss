@@ -1,0 +1,22 @@
+.Confirmation {
+  margin: 2rem auto;
+  background: $gradient-gray;
+  max-width: 60rem;
+  height: 30rem;
+  border-radius: $border-radius;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 13rem;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+
+  .heading-1 {
+    margin-bottom: .7rem;
+  }
+  .icon {
+    color: $accent-color;
+    font-size: 5em;
+  }
+
+}

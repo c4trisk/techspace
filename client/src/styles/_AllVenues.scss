@@ -1,0 +1,21 @@
+@import './SearchBar';
+
+.AllVenues {
+
+  .heading-2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .icon {
+    margin-right: .5rem;
+  }
+
+  .venues {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  
+}

@@ -1,0 +1,46 @@
+.BookingCard {
+  width: 100%;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 10rem;
+
+  border-radius: $border-radius;
+  overflow: hidden;
+  text-decoration: none;
+  color: $text-color;
+
+  .left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 1rem;
+  }
+
+  .right {
+    width: 100%;
+    max-width: 25.4rem;
+    max-height: 13rem;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+
+  .right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.BookingCard.current {
+  background-color: $contrast-background-color;
+}
+
+.BookingCard.previous {
+  background-color: $background-color;
+  color: $text-color-disabled;
+  border: 4px solid $contrast-background-color;
+}

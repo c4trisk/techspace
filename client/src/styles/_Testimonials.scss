@@ -1,0 +1,11 @@
+.Testimonials {
+  margin-top: 3rem;
+  width: 100%;
+
+  .carousel {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}

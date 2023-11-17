@@ -1,0 +1,77 @@
+@import './CallToAction';
+@import './Testimonials';
+@import './TestimonialCard';
+@import './ContactForm';
+
+
+.Home {
+  
+  h3 {
+    margin-bottom: 1.5rem;
+  }
+  .slogan {
+    margin-block: 4rem;
+    text-align: center;
+  }  
+
+  .popular-venues {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+  }
+  
+  .venues {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .nav-btn {
+    align-self: center;
+  }
+
+  .about {
+    margin-inline: -6rem;
+    margin-block: 5rem;
+    background: $gradient-gray;
+    border-radius: $border-radius;
+    padding: 3rem 6rem;
+  }
+
+  .d-flex {
+    gap: 3.5rem;
+  }
+
+  .d-flex img {
+    min-width: 42rem;
+    height: 18rem;
+    object-fit: cover;
+    border-radius: $border-radius;
+  }
+  
+
+  .contact {
+    width: 100%;
+    display: flex;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+
+
+  .find-us {
+    width: 45%;
+    background: $gradient-gray;
+    text-align: center;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .maps {
+    margin-top: 3rem;
+    height: 23rem;
+  }
+  
+}

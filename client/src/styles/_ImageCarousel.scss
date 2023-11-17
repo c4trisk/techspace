@@ -1,0 +1,57 @@
+.ImageCarousel {
+
+  .top {
+    margin-block: .5rem 1rem;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .top * {
+    border-radius: $border-radius;
+    overflow: hidden;
+
+  }
+
+  .maps {
+    max-width: 33.7rem;
+    flex: 1;
+  }
+
+  .main-image {
+    width: 42.4rem;
+    height: 26.5rem;
+  }
+  
+
+  .main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .thumbnails {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $text-color-disabled;
+  }
+
+
+  .thumbnails img {
+    width: 9.5rem;
+    height: 6.4rem;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: $border-radius;
+    transition: all .2s ease-out;
+  }
+
+  .thumbnails img:hover {
+    transform: scale(1.06);
+  }
+
+  .active {
+    border: 3px solid $text-color;
+  }
+}

@@ -1,0 +1,192 @@
+.BookingDetails {
+  margin-top: 1.6rem;
+  
+
+  .venue {
+    margin-top: 2rem;
+    padding: 2rem;
+    
+    background-color: $secondary-background-color;
+    border-radius: $border-radius;
+  }
+  
+  .venue .top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .icon-group {
+    margin-top: .6rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .icon {
+    color: $text-color-disabled;
+  }
+
+  .venue .top .left {
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+  }
+
+  .venue .top .right {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .venue .top .right .img-l {
+    width: 37.8rem;
+    height: 20rem;
+  }
+  .venue .top .right .img-s {
+    width: 17rem;
+    height: 9.5rem;
+  }
+
+  .venue .top .right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: $border-radius;
+  }
+
+  .smaller {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .amenities {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .icon-column {
+    gap: .6rem;
+  }
+
+  .icon-column .icon {
+    font-size: 1.4em;
+  }
+
+  .venue .bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 2.9rem;
+  }
+
+  .venue .bottom .left {
+    width: 100%;
+    flex: 2;
+  }
+  .venue .bottom .right {
+    width: 100%;
+    flex: 3;
+  }
+
+  .contact-card {
+    width: 100%;
+    margin-top: 1.5rem;
+    background: $gradient-gray;
+    border-radius: $border-radius;
+    padding: 2rem 4rem;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .info-group {
+    margin-top: 2rem;
+  }
+
+
+  .location {
+    margin-top: 3rem;
+  }
+
+  .location .top {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .location .top .image {
+    width: 100%;
+    max-width: 34.5rem;
+    height: 18rem;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+  .location .top .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .directions {
+    width: 100%;
+    background: $gradient-gray;
+    border-radius: $border-radius;
+    padding: 2rem;
+  }
+
+  .vehicles {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .vehicle-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .4rem;
+  }
+
+  .vehicle-group .icon {
+    font-size: 3em;
+    color: $text-color-disabled;
+    margin-bottom: 1rem;
+  }
+  .maps {
+    margin-top: 1rem;
+    border-radius: $border-radius;
+    overflow: hidden;
+    height: 25rem;
+  }
+
+  
+  .billing {
+    margin-top: 2rem;
+    background-color: $contrast-background-color;
+    border-radius: $border-radius;
+    padding: 2rem 3rem;
+  }
+
+  .price-table {
+    margin-top: 3rem;
+    width: 100%;
+    border-spacing: 0 1rem;
+  }
+  
+  
+  .price-table .text-l {
+    text-align: left;
+    width: 30%;
+  }
+  .price-table .text-r {
+    text-align: right;
+  }
+
+  .price-table .divider {
+    border-bottom: 1px solid $text-color-disabled;
+  }
+
+  .price-table .bold {
+    font-weight: $type-bold;
+  }
+
+}

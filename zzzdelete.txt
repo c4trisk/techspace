@@ -1,0 +1,93 @@
+VENUES
+
+{
+  "venueName": "string",
+  "address": "string",
+  "location": "string",
+  "capacity": 10,
+  "description": "string",
+  "technicalEquipment": "string",
+  "amenities": {
+    "squareMeters": 10,
+    "wifi": true,
+    "screen": true,
+    "accessibility": true,
+    "catering": true
+  },
+  "furnitureArrangements": {
+    "standing": 10,
+    "classroom": 10,
+    "boardroom": 10,
+    "theatre": 10,
+    "uShape": 10,
+    "dining": 10
+  },
+  "images": ["string", "string", "string"],
+  "pricingInformation": { "pricePerHour": 10 },
+  "reviews": ["string", "string", "string"],
+  "ratingCount": 10,
+  "ratingAvg": 10,
+  "contactInformation": {
+    "website": "string",
+    "contactPerson": {
+      "name": "string",
+      "phone": "string",
+      "email": "string"
+    }
+  }
+}
+
+
+
+BOOKINGS
+
+{
+    "venue": "652d8ac653c86119175e6ff7",
+    "bookingDate": "2023-12-12",
+    "startTime": "0800",
+    "endTime": "1300",
+    "attendees": 10,
+    "cateringAdded": true,
+    "totalCost": 100
+}
+
+
+INDIVIDUELL UPPGIFT
+
+Med designskisser från er gruppuppgift utveckla en webbapplikation med tillhörande
+Back-End.
+
+Godkänd:
+- Skapa en tidsplan för projektet.
+- Demonstrera förmågan att skapa responsivt anpassade gränssnitt för olika enheter och skärmar.
+- Bygga en fungerande webbapplikation med hjälp av HTML, CSS, JavaScript, och en Backend-teknologi baserad på den utvecklade prototypen.
+
+Väl Godkänd:
+- Använd Typescript.
+- Ansvara självständigt för att föra projektet framåt, hålla deadlines, leverera och presentera ett färdigt resultat.
+
+Instruktioner
+1. Frontend Utveckling: 
+Implementera frontend av webbapplikationen med hjälp av följande tekniker:
+- HTML: Skapa webbsidor med korrekt HTML-struktur som efterliknar er design från gruppuppgiften.
+- CSS: Styla webbsidorna med CSS för att efterlikna er design från gruppuppgiften.
+- Javascript: React eller valfritt javascript ramverk.
+
+2. Backend Utveckling: 
+Skapa en fungerande backend för webbapplikationen som möjliggör hantering av boenden, bokningar och användarkonton, liknande Airbnb. Använd valfri backend-teknologi (t.ex. Node.js).
+
+3. Integrering: 
+Koppla frontend och backend så att de kommunicerar korrekt och hanterar användardata och bokningsfunktioner.
+
+Inlämningsuppgift
+Inlämning
+- Skicka in kod (zipfil) eller länk till publikt github repo via Omniway.
+- En beskrivning av den slutgiltiga webbapplikationen, dess funktionalitet och teknik som användes.
+- Vilka funktioner har implementerats
+- Övergripande struktur
+
+Bedömning
+Din prestation kommer att bedömas baserat på hur väl du uppfyller de angivna
+målen och kraven. För att nå en Väl Godkänd nivå måste du framgångsrikt
+implementera Typescript och självständigt ansvara för projektets framsteg och
+leverans.

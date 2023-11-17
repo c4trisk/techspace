@@ -1,0 +1,200 @@
+@import './variables';
+@import './mixins';
+@import './Navbar';
+@import './Footer';
+@import './Home';
+@import './Login';
+@import './VenueCard';
+@import './GoogleMaps';
+@import './AllVenues';
+@import './VenueDetails';
+@import './ConfirmBooking';
+@import './Confirmation';
+@import './Profile';
+@import './BookingDetails';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: $background-color;
+  color: $text-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Containers
+
+.masthead img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.wrapper {
+  max-width: 100%;
+  padding: 0 6rem;
+  flex: 1;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: .7rem;
+}
+
+// Buttons
+
+.btn-primary {
+  @include button($gradient-pink, $accent-color)
+}
+
+.btn-secondary {
+  @include button($gradient-gray, $accent-color)
+}
+
+// Type
+
+.heading-1 {
+  font-size: $heading-1;
+  font-weight: $type-bold;
+}
+
+.heading-2 {
+  font-size: $heading-2;
+  font-weight: $type-bold;
+}
+
+.heading-3 {
+  font-size: $heading-3;
+  font-weight: $type-bold;
+  line-height: 23.8px;
+}
+
+.disabled {
+  color: $text-color-disabled;
+}
+
+.body {
+  font-size: $type-body;
+  font-weight: $type-regular;
+  line-height: 34px;
+}
+
+.small {
+  font-size: $type-small;
+  font-weight: $type-regular;
+  line-height: 23.8px;
+}
+
+.link {
+  font-size: $type-small;
+  font-weight: $type-bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+// Inputs
+
+.input-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  font-family: $font-stack;
+  font-size: 1em;
+  background-color: $input-color;
+  color: $text-color;
+  border-radius: $border-radius;
+  outline: none;
+  border: none;
+  padding: .6rem;
+  margin-top: .4rem;
+
+}
+
+.input-group textarea {
+  resize: none;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $input-color;
+  font: inherit;
+  color: #fff;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.10em solid #fff;
+  border-radius: 0.25em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+
+.checkbox-group input[type="checkbox"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #fff;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+
+.checkbox-group input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+.error-message {
+  color: $text-color-disabled;
+}
+
+.success-message {
+  color: rgb(152, 228, 152)
+}
+
+
+
+// Other
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.d-none {
+  display: none;
+}
+
