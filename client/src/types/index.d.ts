@@ -3,6 +3,7 @@ interface User {
   lastName?: string
   email: string
   password: string
+  repeatPassword?: string
 }
 
 interface Venue {
@@ -18,6 +19,7 @@ interface Venue {
     {
       title: string
       description: string
+      _id: string
     }
   ]
   amenities: {
@@ -52,6 +54,15 @@ interface Venue {
       email: string
     }
   }
+}
+
+type Filters = {
+  date: string
+  location: string
+  attendees: string
+  price: string
+  catering: string
+  breakoutRooms: string
 }
 
 interface Booking {
@@ -103,6 +114,12 @@ interface NewBooking {
   }
 }
 
+interface Like {
+  _id: string
+  venue: string
+  user: User
+}
+
 interface ContactInquiry {
   email: string
   title: string
@@ -117,4 +134,4 @@ interface AuthErrors {
   repeatPassword?: string
 }
 
-export type { User, Venue, Booking, NewBooking, ContactInquiry, AuthErrors }
+export type { User, Venue, Filters, Booking, NewBooking, Like, ContactInquiry, AuthErrors }

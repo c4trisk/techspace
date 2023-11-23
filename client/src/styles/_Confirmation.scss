@@ -7,9 +7,15 @@
   display: flex;
   flex-direction: column;
   padding: 5rem 13rem;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 2rem;
+
+  @include for-mobile {
+    max-width: 100%;
+    padding: 2rem;
+  }
 
   .heading-1 {
     margin-bottom: .7rem;
@@ -17,6 +23,10 @@
   .icon {
     color: $accent-color;
     font-size: 5em;
+
+    @include for-mobile {
+      font-size: 4em;
+    }
   }
 
 }

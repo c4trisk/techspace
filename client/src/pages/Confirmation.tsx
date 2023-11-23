@@ -1,5 +1,5 @@
 import { FaRegCheckCircle } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Confirmation = () => {
   return (
@@ -9,7 +9,7 @@ const Confirmation = () => {
         <h1 className="heading-1">Thank You for Booking With TechSpace!</h1>
         <p className="small">You will receive a confirmation email to your account email, or you can view the details of your booking right here on your profile.</p>
       </div>
-      <NavLink to='/profile' className='btn-primary'>View Booking Details</NavLink>
+      <Link to='/profile'><button className="btn-primary">View Booking Details</button></Link>
     </div>
   )
 }

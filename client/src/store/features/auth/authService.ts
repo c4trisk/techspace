@@ -22,8 +22,10 @@ const loginAsync = async (payload: User) => {
 
 const signupAsync = async (payload: User) => {
   const user = {
+    firstName: payload.firstName,
+    lastName: payload.lastName,
     email: payload.email,
-    password: payload.password
+    password: payload.password,
   }
 
   const res = await fetch('http://localhost:8080/api/users/signup', {

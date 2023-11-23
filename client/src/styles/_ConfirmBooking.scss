@@ -10,6 +10,10 @@
     display: flex;
     gap: 3rem;
     background-color: $background-color;
+
+    @include for-mobile {
+      flex-direction: column;
+    }
   }
   
   .venue-card {
@@ -61,6 +65,11 @@
   .info-card .top {
     display: flex;
     gap: 2rem;
+
+    @include for-mobile {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   .info-card .left,
@@ -70,6 +79,10 @@
 
   .info-card .grouping {
     margin-bottom: 1rem;
+
+    @include for-mobile {
+      margin-bottom: 2rem;
+    }
   }
 
   .info-card .grouping .heading-2 {
@@ -80,6 +93,10 @@
     display: flex;
     gap: 1rem;
     margin-bottom: 1.6rem;
+
+    @include for-mobile {
+      flex-wrap: wrap;
+    }
   }
 
   .ameneties .icon-group {
@@ -100,9 +117,20 @@
 
   .bookingForm .input-group textarea {
     height: 100%;
+
+    @include for-mobile {
+      height: 15rem;
+    }
   }
 
   .bookingForm .buttons {
     align-self: flex-end;
+
+    button {
+      @include for-mobile {
+        width: 100%;
+        margin-bottom: .7rem;
+      }
+    }
   }
 }

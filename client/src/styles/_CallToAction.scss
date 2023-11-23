@@ -4,6 +4,11 @@
   margin-inline: 7rem;
   padding: 4.3rem 12.4rem 2.4rem 12.4rem;
 
+  @include for-mobile {
+    margin-inline: 0;
+    padding: 2rem;
+  }
+
   .heading-1 {
     text-align: center;
     margin-bottom: 2rem;
@@ -16,12 +21,21 @@
 
     button {
       align-self: flex-end;
+
+      @include for-mobile {
+        width: 100%;
+        margin-top: 1rem;
+      }
     }
   }
 
   .inputs {
     display: flex;
-    // justify-content: center;
     gap: 2rem;
+
+    @include for-mobile {
+      flex-direction: column;
+      gap: .4rem
+    }
   }
 }

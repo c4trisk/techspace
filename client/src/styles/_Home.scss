@@ -5,10 +5,18 @@
 
 
 .Home {
+  width: 100%;
+  // @include for-mobile {
+  //   display: flex;
+  //   flex-direction: column;
+  //   align-items: center;
+  // }
   
   h3 {
     margin-bottom: 1.5rem;
+
   }
+
   .slogan {
     margin-block: 4rem;
     text-align: center;
@@ -22,9 +30,16 @@
   }
   
   .venues {
+    width: 100%;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     margin-bottom: 4rem;
+    flex-wrap: wrap;
+
+    @include for-mobile {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   
   .nav-btn {
@@ -37,10 +52,22 @@
     background: $gradient-gray;
     border-radius: $border-radius;
     padding: 3rem 6rem;
+
+    @include for-mobile {
+      margin-inline: -2rem;
+      margin-block: 2rem;
+
+      padding: 2.5rem;
+    }
   }
 
   .d-flex {
     gap: 3.5rem;
+
+    @include for-mobile {
+      gap: 1rem;
+      flex-direction: column;
+    }
   }
 
   .d-flex img {
@@ -48,6 +75,11 @@
     height: 18rem;
     object-fit: cover;
     border-radius: $border-radius;
+
+    @include for-mobile {
+      min-width: 100%;
+      max-width: 10rem;
+    }
   }
   
 
@@ -56,6 +88,10 @@
     display: flex;
     border-radius: $border-radius;
     overflow: hidden;
+
+    @include for-mobile {
+      flex-direction: column;
+    }
   }
 
 
@@ -67,6 +103,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include for-mobile {
+      width: 100%;
+    }
   }
 
   .maps {

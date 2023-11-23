@@ -6,7 +6,7 @@ const router = express.Router()
 
 router.post('/', verifyToken, addLike)
 
-router.get('/', verifyToken, getLikedVenues)
+router.get('/:id', verifyToken, getLikedVenues)
 
 router.delete('/', verifyToken, removeLike)
 

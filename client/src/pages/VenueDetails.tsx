@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { AppDispatch, RootState } from "../store"
 import { useNavigate, useParams } from "react-router-dom"
 import { getVenueBySlug } from '../store/features/venue/venueSlice'
-import { FaRegHeart, FaExpand, FaWifi, FaWheelchair, FaTv, FaConciergeBell, FaChevronRight, FaChevronDown } from 'react-icons/fa'
+import { FaHeart, FaRegHeart, FaExpand, FaWifi, FaWheelchair, FaTv, FaConciergeBell, FaChevronRight, FaChevronDown } from 'react-icons/fa'
 import { ImageCarousel } from '../components/ImageCarousel'
 import iconBoardroom from '../assets/icon-boardroom.png'
 import iconClassroom from '../assets/icon-classroom.png'
@@ -15,6 +15,13 @@ import iconUshape from '../assets/icon-ushape.png'
 
 const VenueDetails = () => {
 
+  const navigate = useNavigate()
+  const dispatch: AppDispatch = useDispatch()
+  const { slug } = useParams()
+  const { venue, loading, error } = useSelector((state: RootState) => state.venue)
+
+
+  const [isVenueLiked, setIsVenueLiked] = useState(false)
   const [showEquipmentList, setShowEquipmentList] = useState(false)
   const [selectedOptions, setSelectedOptions] = useState({
     date: '',
@@ -24,16 +31,13 @@ const VenueDetails = () => {
     cateringAdded: false,
   })
 
-  const navigate = useNavigate()
-  const dispatch: AppDispatch = useDispatch()
-  const { slug } = useParams()
-  const { venue, loading, error } = useSelector((state: RootState) => state.venue)
 
   useEffect(() => {
     if(slug) {
       dispatch(getVenueBySlug(slug))
     }
   }, [])
+
 
   const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | any>) => {
     const { name, value, type, checked } = e.target
@@ -114,9 +118,14 @@ const VenueDetails = () => {
             <h1 className='heading-1'>{venue.venueName}</h1>
             <h2 className='small'>{venue.address}, {venue.location}</h2>
           </div>
-          <div className="d-flex like">
-            <p className="small">Like</p>
-            <FaRegHeart />
+          <div className="d-flex like" >
+            <p className="small">{isVenueLiked ? 'Liked' : 'Like'}</p>
+            {
+              isVenueLiked
+              ? <FaHeart />
+              : <FaRegHeart />
+            }
+            
           </div>
           </div>
           <ImageCarousel venue={venue} />
@@ -163,10 +172,10 @@ const VenueDetails = () => {
                   showEquipmentList && 
                   <div className="equipment-list">
                     { venue.technicalEquipment.map(item => (
-                      <>
+                      <div key={item._id}>
                         <h5 className='heading-3'>{item.title}</h5>
                         <p className="small">{item.description}</p>
-                      </>
+                      </div>
                     )) }
                   </div>
                 }
@@ -211,6 +220,7 @@ const VenueDetails = () => {
                 <p className="body">Do you have questions about this locale or its equipment? Please contact the venue directly.</p>
               </div>
             </div>
+
             <div className="right">
               <form className="bookingForm" onSubmit={handleSubmit}>
                 <h2 className='heading-1'>Book This Venue</h2>
@@ -275,9 +285,10 @@ const VenueDetails = () => {
                   <p className="small disabled">{venue.contactInformation.contactPerson.phone}</p>
                 </div>
               </div>
+
             </div>     
           </div>
-          <h2 className="heading-2">Other Venues You Might Like</h2>
+          {/* <h2 className="heading-2">Other Venues You Might Like</h2> */}
         </>
       )}
     </div>

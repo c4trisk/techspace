@@ -1,4 +1,5 @@
 .Navbar {
+  width: 100%;
   padding: 1.75rem 4.6rem 1rem 2.6rem;
   display: flex;
   justify-content: space-between;
@@ -12,6 +13,11 @@
   list-style: none;
   gap: 2rem;
 }
+@media (max-width: 1000px) {
+  .Navbar .nav-links {
+    display: none;
+  }
+}
 .Navbar .nav-link {
   text-decoration: none;
   color: #fff;
@@ -20,6 +26,29 @@
 }
 .Navbar .nav-link.heading-3.icon {
   font-size: 1.4em;
+}
+.Navbar .hamburger {
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 1000px) {
+  .Navbar .hamburger {
+    display: block;
+  }
+}
+@media (max-width: 1000px) {
+  .Navbar.showMenu .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    width: 100%;
+    background-color: #3f3f3f;
+    z-index: 1000;
+    padding: 2rem;
+  }
 }
 
 .Footer {
@@ -34,6 +63,11 @@
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 1000px) {
+  .Footer .nav {
+    flex-direction: column;
+  }
+}
 .Footer .logo {
   width: 7.7rem;
 }
@@ -41,6 +75,14 @@
   display: flex;
   gap: 2.8rem;
   list-style: none;
+}
+@media (max-width: 1000px) {
+  .Footer .footer-links {
+    margin-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 .Footer .footer-link {
   color: #fff;
@@ -51,6 +93,11 @@
   gap: 0.5rem;
   font-size: 1.5em;
   color: #252525;
+}
+@media (max-width: 1000px) {
+  .Footer .some-links {
+    margin-top: 2rem;
+  }
 }
 .Footer .divider {
   width: 100%;
@@ -65,6 +112,12 @@
   gap: 0.5rem;
   color: #a3a3a3;
 }
+@media (max-width: 1000px) {
+  .Footer .payment-options {
+    align-self: center;
+    margin-bottom: 1rem;
+  }
+}
 .Footer p.small {
   color: #a3a3a3;
   align-self: center;
@@ -75,6 +128,12 @@
   border-radius: 0.5rem;
   margin-inline: 7rem;
   padding: 4.3rem 12.4rem 2.4rem 12.4rem;
+}
+@media (max-width: 1000px) {
+  .CallToAction {
+    margin-inline: 0;
+    padding: 2rem;
+  }
 }
 .CallToAction .heading-1 {
   text-align: center;
@@ -88,9 +147,21 @@
 .CallToAction .search-form button {
   align-self: flex-end;
 }
+@media (max-width: 1000px) {
+  .CallToAction .search-form button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
 .CallToAction .inputs {
   display: flex;
   gap: 2rem;
+}
+@media (max-width: 1000px) {
+  .CallToAction .inputs {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
 }
 
 .Testimonials {
@@ -103,6 +174,11 @@
   justify-content: space-between;
   gap: 2rem;
 }
+@media (max-width: 1000px) {
+  .Testimonials .carousel {
+    flex-direction: column;
+  }
+}
 
 .TestimonialCard {
   background: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
@@ -110,6 +186,11 @@
   padding: 1.5rem;
   display: flex;
   gap: 1.3rem;
+}
+@media (max-width: 1000px) {
+  .TestimonialCard {
+    flex-direction: column;
+  }
 }
 .TestimonialCard .venue {
   flex: 1;
@@ -138,6 +219,11 @@
   flex-direction: column;
   align-items: center;
 }
+@media (max-width: 1000px) {
+  .ContactForm {
+    padding: 2rem;
+  }
+}
 .ContactForm .body {
   margin-bottom: 2rem;
   text-align: center;
@@ -149,7 +235,16 @@
 .ContactForm button {
   align-self: flex-end;
 }
+@media (max-width: 1000px) {
+  .ContactForm button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
 
+.Home {
+  width: 100%;
+}
 .Home h3 {
   margin-bottom: 1.5rem;
 }
@@ -163,9 +258,17 @@
   align-items: flex-start;
 }
 .Home .venues {
+  width: 100%;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   margin-bottom: 4rem;
+  flex-wrap: wrap;
+}
+@media (max-width: 1000px) {
+  .Home .venues {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .Home .nav-btn {
   align-self: center;
@@ -177,8 +280,21 @@
   border-radius: 0.5rem;
   padding: 3rem 6rem;
 }
+@media (max-width: 1000px) {
+  .Home .about {
+    margin-inline: -2rem;
+    margin-block: 2rem;
+    padding: 2.5rem;
+  }
+}
 .Home .d-flex {
   gap: 3.5rem;
+}
+@media (max-width: 1000px) {
+  .Home .d-flex {
+    gap: 1rem;
+    flex-direction: column;
+  }
 }
 .Home .d-flex img {
   min-width: 42rem;
@@ -187,11 +303,22 @@
      object-fit: cover;
   border-radius: 0.5rem;
 }
+@media (max-width: 1000px) {
+  .Home .d-flex img {
+    min-width: 100%;
+    max-width: 10rem;
+  }
+}
 .Home .contact {
   width: 100%;
   display: flex;
   border-radius: 0.5rem;
   overflow: hidden;
+}
+@media (max-width: 1000px) {
+  .Home .contact {
+    flex-direction: column;
+  }
 }
 .Home .find-us {
   width: 45%;
@@ -202,9 +329,145 @@
   flex-direction: column;
   justify-content: space-between;
 }
+@media (max-width: 1000px) {
+  .Home .find-us {
+    width: 100%;
+  }
+}
 .Home .maps {
   margin-top: 3rem;
   height: 23rem;
+}
+
+.Login {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.641);
+  place-content: center;
+  z-index: 1000;
+}
+.Login .modal {
+  max-width: 60rem;
+  background-color: #252525;
+  border-radius: 0.5rem;
+  padding: 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  .Login .modal {
+    max-width: 100%;
+    padding: 3rem 2rem;
+  }
+}
+.Login .close {
+  align-self: flex-start;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+.Login .close:hover,
+.Login .close:focus {
+  color: #ce6ad0;
+  text-decoration: none;
+}
+.Login .loginForm {
+  min-width: 35rem;
+}
+@media (max-width: 1000px) {
+  .Login .loginForm {
+    min-width: 16rem;
+    width: 100%;
+  }
+}
+.Login .d-flex {
+  flex-direction: column;
+}
+@media (max-width: 1000px) {
+  .Login button {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+.Login.active {
+  display: grid;
+}
+
+.Signup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.641);
+  place-content: center;
+  z-index: 1000;
+}
+.Signup .modal {
+  max-width: 60rem;
+  background-color: #252525;
+  border-radius: 0.5rem;
+  padding: 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 1000px) {
+  .Signup .modal {
+    max-width: 90%;
+    padding: 3rem 1.5rem;
+    margin: 0 auto;
+  }
+}
+.Signup .close {
+  align-self: flex-start;
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+.Signup .close:hover,
+.Signup .close:focus {
+  color: #ce6ad0;
+  text-decoration: none;
+}
+.Signup .loginForm {
+  min-width: 35rem;
+  margin-top: 2rem;
+}
+@media (max-width: 1000px) {
+  .Signup .loginForm {
+    min-width: 16rem;
+    width: 100%;
+  }
+}
+.Signup .loginForm .d-flex {
+  gap: 1rem;
+}
+@media (max-width: 1000px) {
+  .Signup .loginForm .d-flex {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1000px) {
+  .Signup button {
+    margin-top: 1rem;
+    width: 100%;
+  }
+}
+
+.Signup.active {
+  display: grid;
 }
 
 .VenueCard {
@@ -225,6 +488,7 @@
   justify-content: flex-end;
   padding: 0.7rem;
   font-size: 1.7em;
+  cursor: pointer;
 }
 .VenueCard img {
   max-width: 100%;
@@ -301,10 +565,21 @@
   padding: 2rem 3rem;
   margin-bottom: 2rem;
 }
+@media (max-width: 1000px) {
+  .SearchBar {
+    padding: 2rem 1.5rem;
+  }
+}
 .SearchBar .inputs {
   display: flex;
   gap: 2rem;
   margin-bottom: 1rem;
+}
+@media (max-width: 1000px) {
+  .SearchBar .inputs {
+    flex-direction: column;
+    gap: 0.4rem;
+  }
 }
 .SearchBar .icon {
   margin-left: 0.7rem;
@@ -314,6 +589,17 @@
   margin-top: 0.7rem;
   display: flex;
   gap: 2rem;
+}
+@media (max-width: 1000px) {
+  .SearchBar .d-flex:nth-child(2) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+@media (max-width: 1000px) {
+  .SearchBar button {
+    width: 100%;
+  }
 }
 
 .AllVenues .heading-2 {
@@ -328,12 +614,24 @@
   gap: 2rem;
   margin-bottom: 3rem;
 }
+@media (max-width: 1000px) {
+  .AllVenues .venues {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 
 .ImageCarousel .top {
   margin-block: 0.5rem 1rem;
   display: flex;
   gap: 1rem;
   width: 100%;
+}
+@media (max-width: 1000px) {
+  .ImageCarousel .top {
+    flex-direction: column;
+    margin-block: 1rem;
+  }
 }
 .ImageCarousel .top * {
   border-radius: 0.5rem;
@@ -343,9 +641,25 @@
   max-width: 33.7rem;
   flex: 1;
 }
+@media (max-width: 1000px) {
+  .ImageCarousel .maps {
+    max-width: 100%;
+    width: 100%;
+    order: 1;
+    flex: 0;
+  }
+}
 .ImageCarousel .main-image {
   width: 42.4rem;
   height: 26.5rem;
+}
+@media (max-width: 1000px) {
+  .ImageCarousel .main-image {
+    min-width: 100%;
+    width: 100%;
+    max-height: 12rem;
+    order: 2;
+  }
 }
 .ImageCarousel .main-image img {
   width: 100%;
@@ -359,6 +673,12 @@
   align-items: center;
   color: #a3a3a3;
 }
+@media (max-width: 1000px) {
+  .ImageCarousel .thumbnails {
+    overflow: scroll;
+    gap: 1rem;
+  }
+}
 .ImageCarousel .thumbnails img {
   width: 9.5rem;
   height: 6.4rem;
@@ -370,6 +690,14 @@
 }
 .ImageCarousel .thumbnails img:hover {
   transform: scale(1.06);
+}
+.ImageCarousel .thumbnails .cursor-pointer {
+  font-size: 1.5em;
+}
+@media (max-width: 1000px) {
+  .ImageCarousel .thumbnails .cursor-pointer {
+    display: none;
+  }
 }
 .ImageCarousel .active {
   border: 3px solid #fff;
@@ -383,13 +711,30 @@
   align-items: flex-end;
   gap: 1rem;
 }
+@media (max-width: 1000px) {
+  .VenueDetails .name {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+}
 .VenueDetails .like {
   gap: 0.5rem;
+}
+@media (max-width: 1000px) {
+  .VenueDetails .d-flex.like {
+    flex-direction: row;
+  }
 }
 .VenueDetails .main {
   margin-top: 3rem;
   display: flex;
   gap: 2rem;
+}
+@media (max-width: 1000px) {
+  .VenueDetails .main {
+    flex-direction: column;
+  }
 }
 .VenueDetails .main .left,
 .VenueDetails .main .right {
@@ -409,6 +754,11 @@
   display: flex;
   gap: 2rem;
   margin-bottom: 1rem;
+}
+@media (max-width: 1000px) {
+  .VenueDetails .icons {
+    flex-wrap: wrap;
+  }
 }
 .VenueDetails .icon-group {
   display: flex;
@@ -434,6 +784,11 @@
 .VenueDetails .equipment-list .small {
   margin-bottom: 0.5rem;
 }
+@media (max-width: 1000px) {
+  .VenueDetails .equipment-list .small {
+    margin-bottom: 1rem;
+  }
+}
 .VenueDetails .chevron {
   font-size: 0.8em;
 }
@@ -441,6 +796,12 @@
   margin-top: 3rem;
   display: flex;
   gap: 4rem;
+}
+@media (max-width: 1000px) {
+  .VenueDetails .furniture-arrangements {
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
 }
 .VenueDetails .furniture-arrangements .flex-column {
   justify-content: space-between;
@@ -456,6 +817,11 @@
   flex-direction: column;
   align-items: center;
   padding: 3.5rem;
+}
+@media (max-width: 1000px) {
+  .VenueDetails .bookingForm {
+    padding: 3rem 1.5rem;
+  }
 }
 .VenueDetails .input-group:first-of-type {
   margin-top: 3rem;
@@ -482,6 +848,13 @@
   padding: 2rem 3rem;
   display: flex;
 }
+@media (max-width: 1000px) {
+  .VenueDetails .contact-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+}
 
 .ConfirmBooking h1 {
   margin-top: 2rem;
@@ -492,6 +865,11 @@
   display: flex;
   gap: 3rem;
   background-color: #121212;
+}
+@media (max-width: 1000px) {
+  .ConfirmBooking .confirm-wrapper {
+    flex-direction: column;
+  }
 }
 .ConfirmBooking .venue-card {
   max-width: 23.75rem;
@@ -536,12 +914,23 @@
   display: flex;
   gap: 2rem;
 }
+@media (max-width: 1000px) {
+  .ConfirmBooking .info-card .top {
+    flex-direction: column;
+    gap: 0;
+  }
+}
 .ConfirmBooking .info-card .left,
 .ConfirmBooking .info-card .right {
   flex: 1;
 }
 .ConfirmBooking .info-card .grouping {
   margin-bottom: 1rem;
+}
+@media (max-width: 1000px) {
+  .ConfirmBooking .info-card .grouping {
+    margin-bottom: 2rem;
+  }
 }
 .ConfirmBooking .info-card .grouping .heading-2 {
   margin-bottom: 0.7rem;
@@ -550,6 +939,11 @@
   display: flex;
   gap: 1rem;
   margin-bottom: 1.6rem;
+}
+@media (max-width: 1000px) {
+  .ConfirmBooking .ameneties {
+    flex-wrap: wrap;
+  }
 }
 .ConfirmBooking .ameneties .icon-group {
   display: flex;
@@ -567,8 +961,19 @@
 .ConfirmBooking .bookingForm .input-group textarea {
   height: 100%;
 }
+@media (max-width: 1000px) {
+  .ConfirmBooking .bookingForm .input-group textarea {
+    height: 15rem;
+  }
+}
 .ConfirmBooking .bookingForm .buttons {
   align-self: flex-end;
+}
+@media (max-width: 1000px) {
+  .ConfirmBooking .bookingForm .buttons button {
+    width: 100%;
+    margin-bottom: 0.7rem;
+  }
 }
 
 .Confirmation {
@@ -580,9 +985,16 @@
   display: flex;
   flex-direction: column;
   padding: 5rem 13rem;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  gap: 2rem;
+}
+@media (max-width: 1000px) {
+  .Confirmation {
+    max-width: 100%;
+    padding: 2rem;
+  }
 }
 .Confirmation .heading-1 {
   margin-bottom: 0.7rem;
@@ -590,6 +1002,11 @@
 .Confirmation .icon {
   color: #ce6ad0;
   font-size: 5em;
+}
+@media (max-width: 1000px) {
+  .Confirmation .icon {
+    font-size: 4em;
+  }
 }
 
 .BookingCard {
@@ -604,12 +1021,24 @@
   text-decoration: none;
   color: #fff;
 }
+@media (max-width: 1000px) {
+  .BookingCard {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 .BookingCard .left {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-left: 1rem;
+}
+@media (max-width: 1000px) {
+  .BookingCard .left {
+    order: 2;
+    padding: 0;
+  }
 }
 .BookingCard .right {
   width: 100%;
@@ -623,6 +1052,17 @@
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+@media (max-width: 1000px) {
+  .BookingCard .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 1000px) {
+  .BookingCard .price {
+    margin-top: 3rem;
+  }
 }
 
 .BookingCard.current {
@@ -638,6 +1078,11 @@
 .Profile {
   margin-top: 1rem;
 }
+@media (max-width: 1000px) {
+  .Profile .heading-1:first-of-type {
+    text-align: center;
+  }
+}
 .Profile section {
   margin-bottom: 2rem;
 }
@@ -648,9 +1093,20 @@
   width: 100%;
   margin-top: 1.5rem;
 }
+.Profile .venue-cards {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
 .BookingDetails {
   margin-top: 1.6rem;
+}
+@media (max-width: 1000px) {
+  .BookingDetails .d-flex {
+    flex-direction: column;
+  }
 }
 .BookingDetails .venue {
   margin-top: 2rem;
@@ -662,11 +1118,21 @@
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1000px) {
+  .BookingDetails .venue .top {
+    flex-direction: column;
+  }
+}
 .BookingDetails .icon-group {
   margin-top: 0.6rem;
   display: flex;
   gap: 1rem;
   align-items: center;
+}
+@media (max-width: 1000px) {
+  .BookingDetails .icon-group {
+    margin-top: 0.2rem;
+  }
 }
 .BookingDetails .icon {
   color: #a3a3a3;
@@ -676,17 +1142,46 @@
   flex-direction: column;
   gap: 0.7rem;
 }
+@media (max-width: 1000px) {
+  .BookingDetails .venue .top .left {
+    order: 2;
+  }
+}
+@media (max-width: 1000px) {
+  .BookingDetails .venue .top .left .heading-2 {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}
 .BookingDetails .venue .top .right {
   display: flex;
   gap: 1rem;
+}
+@media (max-width: 1000px) {
+  .BookingDetails .venue .top .right {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
 }
 .BookingDetails .venue .top .right .img-l {
   width: 37.8rem;
   height: 20rem;
 }
+@media (max-width: 1000px) {
+  .BookingDetails .venue .top .right .img-l {
+    width: 100%;
+    height: 10rem;
+  }
+}
 .BookingDetails .venue .top .right .img-s {
   width: 17rem;
   height: 9.5rem;
+}
+@media (max-width: 1000px) {
+  .BookingDetails .venue .top .right .img-s {
+    width: 100%;
+    height: 5rem;
+  }
 }
 .BookingDetails .venue .top .right img {
   width: 100%;
@@ -700,9 +1195,20 @@
   flex-direction: column;
   justify-content: space-between;
 }
+@media (max-width: 1000px) {
+  .BookingDetails .smaller {
+    flex-direction: row;
+    gap: 0.7rem;
+  }
+}
 .BookingDetails .amenities {
   display: flex;
   gap: 1.5rem;
+}
+@media (max-width: 1000px) {
+  .BookingDetails .amenities {
+    flex-wrap: wrap;
+  }
 }
 .BookingDetails .icon-column {
   gap: 0.6rem;
@@ -714,6 +1220,12 @@
   display: flex;
   justify-content: space-between;
   gap: 2.9rem;
+}
+@media (max-width: 1000px) {
+  .BookingDetails .venue .bottom {
+    flex-direction: column;
+    gap: 0;
+  }
 }
 .BookingDetails .venue .bottom .left {
   width: 100%;
@@ -732,6 +1244,15 @@
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1000px) {
+  .BookingDetails .contact-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    padding: 1rem;
+  }
+}
 .BookingDetails .info-group {
   margin-top: 2rem;
 }
@@ -743,12 +1264,22 @@
   display: flex;
   gap: 1rem;
 }
+@media (max-width: 1000px) {
+  .BookingDetails .location .top {
+    flex-direction: column;
+  }
+}
 .BookingDetails .location .top .image {
   width: 100%;
   max-width: 34.5rem;
   height: 18rem;
   border-radius: 0.5rem;
   overflow: hidden;
+}
+@media (max-width: 1000px) {
+  .BookingDetails .location .top .image {
+    height: 10rem;
+  }
 }
 .BookingDetails .location .top .image img {
   width: 100%;
@@ -762,10 +1293,21 @@
   border-radius: 0.5rem;
   padding: 2rem;
 }
+@media (max-width: 1000px) {
+  .BookingDetails .directions {
+    text-align: center;
+  }
+}
 .BookingDetails .vehicles {
   margin-top: 2rem;
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 1000px) {
+  .BookingDetails .vehicles {
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
 .BookingDetails .vehicle-group {
   display: flex;
@@ -777,6 +1319,11 @@
   font-size: 3em;
   color: #a3a3a3;
   margin-bottom: 1rem;
+}
+@media (max-width: 1000px) {
+  .BookingDetails .vehicle-group .icon {
+    font-size: 2em;
+  }
 }
 .BookingDetails .maps {
   margin-top: 1rem;
@@ -790,10 +1337,23 @@
   border-radius: 0.5rem;
   padding: 2rem 3rem;
 }
+@media (max-width: 1000px) {
+  .BookingDetails .billing {
+    padding: 2rem 1rem;
+  }
+}
 .BookingDetails .price-table {
   margin-top: 3rem;
   width: 100%;
   border-spacing: 0 1rem;
+}
+@media (max-width: 1000px) {
+  .BookingDetails .price-table {
+    font-size: 10px;
+  }
+}
+.BookingDetails .overflow-auto {
+  overflow: auto;
 }
 .BookingDetails .price-table .text-l {
   text-align: left;
@@ -809,6 +1369,25 @@
   font-weight: 700;
 }
 
+.form-input {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.form-input input {
+  width: 100%;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1em;
+  background-color: #171717;
+  color: #fff;
+  border-radius: 0.5rem;
+  outline: none;
+  border: none;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -822,6 +1401,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth;
 }
 
 .masthead img {
@@ -835,6 +1415,11 @@ body {
   max-width: 100%;
   padding: 0 6rem;
   flex: 1;
+}
+@media (max-width: 1000px) {
+  .wrapper {
+    padding: 0 2rem;
+  }
 }
 
 .d-flex {
@@ -901,10 +1486,20 @@ body {
   font-size: 1.75em;
   font-weight: 700;
 }
+@media (max-width: 1000px) {
+  .heading-1 {
+    font-size: 30px;
+  }
+}
 
 .heading-2 {
   font-size: 1.25em;
   font-weight: 700;
+}
+@media (max-width: 1000px) {
+  .heading-2 {
+    font-size: 18px;
+  }
 }
 
 .heading-3 {
@@ -922,11 +1517,22 @@ body {
   font-weight: 400;
   line-height: 34px;
 }
+@media (max-width: 1000px) {
+  .body {
+    font-size: 14px;
+    line-height: 26px;
+  }
+}
 
 .small {
   font-size: 0.8em;
   font-weight: 400;
   line-height: 23.8px;
+}
+@media (max-width: 1000px) {
+  .small {
+    font-size: 12px;
+  }
 }
 
 .link {

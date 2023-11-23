@@ -1,4 +1,5 @@
 .Navbar {
+  width: 100%;
   padding: 1.75rem 4.6rem 1rem 2.6rem;
   display: flex;
   justify-content: space-between;
@@ -12,6 +13,10 @@
     display: flex;
     list-style: none;
     gap: 2rem;
+
+    @include for-mobile {
+      display: none; 
+    }
   }
 
   .nav-link {
@@ -23,5 +28,29 @@
 
   .nav-link.heading-3.icon {
     font-size: 1.4em;
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+
+    @include for-mobile {
+      display: block;
+    }
+  }
+
+  &.showMenu .nav-links {
+    @include for-mobile {
+     display: flex; 
+     flex-direction: column;
+     align-items: center;
+     position: absolute;
+     top: 4.5rem;
+     left: 0;
+     width: 100%;
+     background-color: $light-contrast-background-color;
+     z-index: 1000;
+     padding: 2rem;
+    }
   }
 }

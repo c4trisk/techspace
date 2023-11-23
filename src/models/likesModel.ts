@@ -6,9 +6,9 @@ import Likes from '../schemas/likesSchema'
 
 export const addLike = async (req: express.Request, res: express.Response) => {
 
-  const { venue } = req.body
+  const { user, venue } = req.body
 
-  const like = await Likes.create({ user: req.userId, venue })
+  const like = await Likes.create({ user, venue })
 
   if(!like) res.status(500).json({ message: 'Something went wrong when creating like' })
 
@@ -19,20 +19,22 @@ export const addLike = async (req: express.Request, res: express.Response) => {
 
 export const removeLike = async (req: express.Request, res: express.Response) => {
 
-  const { venue } = req.body
+  const { user, venue } = req.body
   
-  const like = await Likes.findOneAndDelete({ user: req.userId, venue })
+  const like = await Likes.findOneAndDelete({ user, venue })
   
   if(!like) res.status(404).json({ message: 'Could not find like' })
   
-  res.status(204).json({ message: 'Venue Unliked.' })
+  res.status(200).json({ removedLikeId: like._id })
 }
 
 
 // Get user's liked venues
 export const getLikedVenues = async (req: express.Request, res: express.Response) => {
   
-  const likes = await Likes.find({ user: req.userId }).populate('venue').exec()
+  
+  const likes = await Likes.find({ user: req.params.id })
+    .populate({ path: 'venue' })
 
   if(!likes) res.status(404).json({ message: 'Could not find likes' })
 

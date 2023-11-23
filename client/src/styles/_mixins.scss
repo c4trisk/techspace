@@ -7,6 +7,12 @@
   }
 }
 
+@mixin for-mobile {
+  @media(max-width: '1000px') {
+    @content;
+  }
+}
+
 
 @mixin button($clr, $hover-clr) {
   color: $text-color;

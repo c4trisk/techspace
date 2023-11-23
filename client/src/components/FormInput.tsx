@@ -3,8 +3,8 @@ type FormInputProps = {
   id: string;
   type: string;
   label: string;
-  errorMessage: any;
-  value: string;
+  errorMessage?: string | undefined;
+  value: string | undefined;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 

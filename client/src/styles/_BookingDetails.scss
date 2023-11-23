@@ -1,6 +1,11 @@
 .BookingDetails {
   margin-top: 1.6rem;
   
+  .d-flex {
+    @include for-mobile {
+      flex-direction: column;
+    }
+  }
 
   .venue {
     margin-top: 2rem;
@@ -13,6 +18,10 @@
   .venue .top {
     display: flex;
     justify-content: space-between;
+
+    @include for-mobile {
+      flex-direction: column;
+    }
   }
 
   .icon-group {
@@ -20,6 +29,10 @@
     display: flex;
     gap: 1rem;
     align-items: center;
+
+    @include for-mobile {
+      margin-top: 0.2rem;
+    }
   }
 
   .icon {
@@ -30,20 +43,46 @@
     display: flex;
     flex-direction: column;
     gap: .7rem;
+
+    @include for-mobile {
+      order: 2; 
+    }
+
+    .heading-2 {
+      @include for-mobile {
+        text-align: center;
+        margin-top: 1rem;
+      }
+    }
   }
 
   .venue .top .right {
     display: flex;
     gap: 1rem;
+
+    @include for-mobile {
+      flex-direction: column;
+      gap: .6rem;
+    }
   }
 
   .venue .top .right .img-l {
     width: 37.8rem;
     height: 20rem;
+
+    @include for-mobile {
+      width: 100%;
+      height: 10rem;
+    }
   }
   .venue .top .right .img-s {
     width: 17rem;
     height: 9.5rem;
+    
+    @include for-mobile {
+      width: 100%;
+      height: 5rem;
+    }
   }
 
   .venue .top .right img {
@@ -57,11 +96,20 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include for-mobile {
+      flex-direction: row;
+      gap: .7rem;
+    }
   }
 
   .amenities {
     display: flex;
     gap: 1.5rem;
+
+    @include for-mobile {
+      flex-wrap: wrap;
+    }
   }
 
   .icon-column {
@@ -76,6 +124,11 @@
     display: flex;
     justify-content: space-between;
     gap: 2.9rem;
+
+    @include for-mobile {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   .venue .bottom .left {
@@ -96,6 +149,14 @@
 
     display: flex;
     justify-content: space-between;
+
+    @include for-mobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2rem;
+      padding: 1rem;
+    }
   }
 
   .info-group {
@@ -111,6 +172,10 @@
     margin-top: 1.5rem;
     display: flex;
     gap: 1rem;
+
+    @include for-mobile {
+      flex-direction: column;
+    }
   }
 
   .location .top .image {
@@ -119,6 +184,10 @@
     height: 18rem;
     border-radius: $border-radius;
     overflow: hidden;
+
+    @include for-mobile {
+      height: 10rem;
+    }
   }
   .location .top .image img {
     width: 100%;
@@ -131,12 +200,21 @@
     background: $gradient-gray;
     border-radius: $border-radius;
     padding: 2rem;
+
+    @include for-mobile {
+      text-align: center;
+    }
   }
 
   .vehicles {
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
+
+    @include for-mobile {
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
   
   .vehicle-group {
@@ -150,6 +228,10 @@
     font-size: 3em;
     color: $text-color-disabled;
     margin-bottom: 1rem;
+
+    @include for-mobile {
+      font-size: 2em;
+    }
   }
   .maps {
     margin-top: 1rem;
@@ -164,15 +246,26 @@
     background-color: $contrast-background-color;
     border-radius: $border-radius;
     padding: 2rem 3rem;
+
+    @include for-mobile {
+      padding: 2rem 1rem;
+    }
   }
 
   .price-table {
     margin-top: 3rem;
     width: 100%;
     border-spacing: 0 1rem;
+
+    @include for-mobile {
+      font-size: 10px;
+    }
   }
   
-  
+  .overflow-auto {
+    overflow: auto;
+  }
+
   .price-table .text-l {
     text-align: left;
     width: 30%;

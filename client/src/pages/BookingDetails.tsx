@@ -29,8 +29,8 @@ const BookingDetails = () => {
       { loading && <p>Loading...</p> }
       { booking && <>
         <div className="d-flex">
-          <h1 className="heading-1">Booking Number #{booking._id}</h1>
-          <button className='btn-primary'>Add to calendar</button>
+          <h1 className="heading-2">Booking Number #{booking._id}</h1>
+          {/* <button className='btn-primary'>Add to calendar</button> */}
         </div>
         <h2 className="body">{formatDate(booking.date)} - {booking.startTime}:00 - {booking.endTime}:00</h2>
 
@@ -181,76 +181,95 @@ const BookingDetails = () => {
             <p className="body">{booking.billingInformation.billingAddress.companyName}</p>
             <p className="body">{booking.billingInformation.billingAddress.address}</p>
           </div>
+          <div className="overflow-auto">
+
           <table className='price-table'>
-            <tr>
-              <th className='text-l'>Description</th>
-              <th className='text-r'>Qty</th>
-              <th className='text-r'>Unit</th>
-              <th className='text-r'>Unit Price</th>
-              <th className='text-r'>Vat 20%</th>
-              <th className='text-r'>Total Price</th>
-            </tr>
-            <tr>
-              <td className="text-l">Venue Rent</td>
-              <td className="text-r">{booking.totalHours}</td>
-              <td className="text-r">hours</td>
-              <td className="text-r">SEK {(booking.billingInformation.pricing.pricePerHour).toFixed(2)}</td>
-              <td className="text-r">SEK {((booking.billingInformation.pricing.pricePerHour * booking.totalHours) * 0.2).toFixed(2)}</td>
-              <td className="text-r">SEK {(booking.subTotal + (booking.billingInformation.pricing.pricePerHour * .2)).toFixed(2)}</td>
-            </tr>
+            <thead>
+              <tr>
+                <th className='text-l'>Description</th>
+                <th className='text-r'>Qty</th>
+                <th className='text-r'>Unit</th>
+                <th className='text-r'>Unit Price</th>
+                <th className='text-r'>Vat 20%</th>
+                <th className='text-r'>Total Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="text-l">Venue Rent</td>
+                <td className="text-r">{booking.totalHours}</td>
+                <td className="text-r">hours</td>
+                <td className="text-r">SEK {(booking.billingInformation.pricing.pricePerHour).toFixed(2)}</td>
+                <td className="text-r">SEK {((booking.billingInformation.pricing.pricePerHour * booking.totalHours) * 0.2).toFixed(2)}</td>
+                <td className="text-r">SEK {(booking.subTotal + (booking.billingInformation.pricing.pricePerHour * .2)).toFixed(2)}</td>
+              </tr>
+            </tbody>
             {
               booking.billingInformation.pricing.cleaningFee &&
+              <tbody>
+                <tr>
+                  <td className="text-l">Cleaning Fee</td>
+                  <td className="text-r">1</td>
+                  <td className="text-r">pce</td>
+                  <td className="text-r">SEK {(booking.billingInformation.pricing.cleaningFee).toFixed(2)}</td>
+                  <td className="text-r">SEK {(booking.billingInformation.pricing.cleaningFee * 0.2).toFixed(2)}</td>
+                  <td className="text-r">SEK {(booking.billingInformation.pricing.cleaningFee + (booking.billingInformation.pricing.cleaningFee * 0.2)).toFixed(2)}</td>
+                </tr>
+              </tbody>
+            }
+            <tbody>
               <tr>
-                <td className="text-l">Cleaning Fee</td>
+                <td className="text-l">Administration Fee</td>
                 <td className="text-r">1</td>
                 <td className="text-r">pce</td>
-                <td className="text-r">SEK {(booking.billingInformation.pricing.cleaningFee).toFixed(2)}</td>
-                <td className="text-r">SEK {(booking.billingInformation.pricing.cleaningFee * 0.2).toFixed(2)}</td>
-                <td className="text-r">SEK {(booking.billingInformation.pricing.cleaningFee + (booking.billingInformation.pricing.cleaningFee * 0.2)).toFixed(2)}</td>
+                <td className="text-r">SEK {(booking.billingInformation.pricing.adminFee).toFixed(2)}</td>
+                <td className="text-r">SEK {(booking.billingInformation.pricing.adminFee * 0.2).toFixed(2)}</td>
+                <td className="text-r">SEK {(booking.billingInformation.pricing.adminFee + (booking.billingInformation.pricing.adminFee * 0.2)).toFixed(2)}</td>
               </tr>
-            }
-            <tr>
-              <td className="text-l">Administration Fee</td>
-              <td className="text-r">1</td>
-              <td className="text-r">pce</td>
-              <td className="text-r">SEK {(booking.billingInformation.pricing.adminFee).toFixed(2)}</td>
-              <td className="text-r">SEK {(booking.billingInformation.pricing.adminFee * 0.2).toFixed(2)}</td>
-              <td className="text-r">SEK {(booking.billingInformation.pricing.adminFee + (booking.billingInformation.pricing.adminFee * 0.2)).toFixed(2)}</td>
-            </tr>
-            <tr>
-              <td className='divider'></td>
-              <td className='divider'></td>
-              <td className='divider'></td>
-              <td className='divider'></td>
-              <td className='divider'></td>
-              <td className='divider'></td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className='text-r'>Sub Total</td>
-              <td className='text-r'>SEK {(booking.subTotal).toFixed(2)}</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className='text-r'>Total VAT 20%</td>
-              <td className='text-r'>SEK {(booking.subTotal * 0.2).toFixed(2)}</td>
-
-            </tr>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className='text-r bold'>Total Amount Due</td>
-              <td className='text-r bold'>SEK {(booking.subTotal + (booking.subTotal * 0.2)).toFixed(2)}</td>
-            </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td className='divider'></td>
+                <td className='divider'></td>
+                <td className='divider'></td>
+                <td className='divider'></td>
+                <td className='divider'></td>
+                <td className='divider'></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td className='text-r'>Sub Total</td>
+                <td className='text-r'>SEK {(booking.subTotal).toFixed(2)}</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td className='text-r'>Total VAT 20%</td>
+                <td className='text-r'>SEK {(booking.subTotal * 0.2).toFixed(2)}</td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td className='text-r bold'>Total Amount Due</td>
+                <td className='text-r bold'>SEK {(booking.subTotal + (booking.subTotal * 0.2)).toFixed(2)}</td>
+              </tr>
+            </tbody>
           </table>
+          </div>
+
         </section>
         
       </>}

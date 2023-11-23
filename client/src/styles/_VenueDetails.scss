@@ -7,16 +7,32 @@
     display: flex;
     align-items: flex-end;
     gap: 1rem;
+
+    @include for-mobile {
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem
+    }
   }
 
   .like {
     gap: .5rem;
   }
 
+  .d-flex.like {
+    @include for-mobile {
+      flex-direction: row;
+    }
+  }
+
   .main {
     margin-top: 3rem;
     display: flex;
     gap: 2rem;
+
+    @include for-mobile {
+      flex-direction: column;
+    }
   }
 
   .main .left,
@@ -41,6 +57,10 @@
     display: flex;
     gap: 2rem;
     margin-bottom: 1rem;
+
+    @include for-mobile {
+      flex-wrap: wrap;
+    }
   }
 
   .icon-group {
@@ -70,6 +90,10 @@
 
   .equipment-list .small {
     margin-bottom: .5rem;
+
+    @include for-mobile {
+      margin-bottom: 1rem;
+    }
   }
 
   .chevron {
@@ -80,6 +104,11 @@
     margin-top: 3rem;
     display: flex;
     gap: 4rem;
+
+    @include for-mobile {
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
   }
 
   .furniture-arrangements .flex-column {
@@ -99,6 +128,10 @@
     flex-direction: column;
     align-items: center;
     padding: 3.5rem;
+
+    @include for-mobile {
+      padding: 3rem 1.5rem;
+    }
   }
 
   .input-group:first-of-type {
@@ -131,5 +164,11 @@
     padding: 2rem 3rem;
 
     display: flex;
+
+    @include for-mobile {
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+    }
   }
 }

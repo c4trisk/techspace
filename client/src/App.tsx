@@ -1,3 +1,4 @@
+import React from 'react'
 import './styles/index.css'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
@@ -13,10 +14,12 @@ import Profile from './pages/Profile'
 import { ProtectedRoute } from './routes/ProtectedRoute'
 import VenueDetails from './pages/VenueDetails'
 import BookingDetails from './pages/BookingDetails'
-const App = () => {
+import { ModalProvider } from './context/ModalContext'
+
+const App: React.FC = () => {
 
   return (
-    <>
+    <ModalProvider>
       <div className="masthead">
         <img src={masthead} alt="" />
       </div>
@@ -26,7 +29,7 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='venues' element={<AllVenues />} />
           <Route path='login' element={<Login />} />
-          <Route path='signup' element={<Signup />} />
+          {/* <Route path='signup' element={<Signup />} /> */}
           <Route path='profile' element={
             <ProtectedRoute>
               <Profile />
@@ -52,7 +55,7 @@ const App = () => {
         </Routes>
       </div>
       <Footer />
-    </>
+    </ModalProvider>
   )
 
 }

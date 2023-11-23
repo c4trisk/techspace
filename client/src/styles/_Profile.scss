@@ -3,6 +3,12 @@
 .Profile {
   margin-top: 1rem;
 
+  .heading-1:first-of-type {
+    @include for-mobile {
+      text-align: center;
+    }
+  }
+
   section {
     margin-bottom: 2rem;
   }
@@ -14,6 +20,14 @@
   .current-bookings {
     width: 100%;
     margin-top: 1.5rem;
+  }
+
+  .venue-cards {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    flex-wrap: wrap;
+    // justify-content: space-between;
   }
 
 }

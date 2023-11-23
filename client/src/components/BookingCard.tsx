@@ -22,7 +22,7 @@ const BookingCard: React.FC<BookingCardProps> = ({ booking, style }) => {
             <p className="heading-2">{booking.startTime}:00 - {booking.endTime }:00</p>
           </div>
         </div>
-        <p className="heading-2">SEK {(booking.subTotal).toFixed(2)}</p>
+        <p className="heading-2 price">SEK {(booking.subTotal).toFixed(2)}</p>
       </div>
       <div className="right">
         <img src={booking.venue.images[0]} alt={booking.venue.venueName} />

@@ -1,24 +1,39 @@
-import { NavLink } from "react-router-dom"
+import { useState } from "react"
+import { NavLink, Link } from "react-router-dom"
 import { HashLink } from 'react-router-hash-link'
-import { Link } from "react-router-dom"
 import logo from '../assets/techspace-logo.png'
-import { FaUserCircle } from 'react-icons/fa'
+import { FaUserCircle, FaBars } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { RootState } from '../store'
 import { useDispatch } from "react-redux"
 import { logout } from "../store/features/auth/authSlice"
+import Login from '../pages/Login'
+import Signup from '../pages/Signup'
+import { useModal } from '../context/ModalContext'
 
 const Navbar = () => {
 
-  const { user } = useSelector((state: RootState) => state.auth)
   const dispatch = useDispatch()
+  
+  const { user } = useSelector((state: RootState) => state.auth)
+  const { showLoginModal, showSignupModal, setShowLoginModal } = useModal()
+
+  const [showMenu, setShowMenu] = useState(false)
+
+  const toggleLoginModal = () => {
+    setShowLoginModal((prev) => !prev)
+  }
+
 
   return (
-    <nav className="Navbar">
+    <nav className={`Navbar ${showMenu ? 'showMenu' : ''}`}>
       <div >
         <Link to='/'><img className="logo" src={logo} alt="TechSpace Logo" /></Link>
       </div>
-      <ul className="nav-links">
+      <div className="hamburger" onClick={() => setShowMenu(state => !state)}>
+        <FaBars />
+      </div>
+      <ul className='nav-links'>
         <li><NavLink to='/venues' className='nav-link heading-3'>All Venues</NavLink></li>
         <li><HashLink to="/#about" className='nav-link heading-3'>About Us</HashLink></li>
         
@@ -28,9 +43,10 @@ const Navbar = () => {
             <li><Link to='/profile' className='nav-link heading-3 icon'><FaUserCircle /></Link></li>
             <li><p className='nav-link heading-3' onClick={() => dispatch(logout())}>Logout</p></li>
             </>
-          : <li><NavLink to='/login' className='nav-link heading-3'>Login</NavLink></li>
+          : <li><p className='nav-link heading-3' onClick={toggleLoginModal}>Login</p></li>
           }
-          
+          { showLoginModal && <Login /> }
+          { showSignupModal && <Signup /> }
           
       </ul>
 

@@ -1,11 +1,10 @@
-import React from 'react'
 import TestimonialCard from './TestimonialCard'
 import { useSelector } from 'react-redux'
 import { RootState } from '../store'
 
 const Testimonials = () => {
 
-  const { venues, error, loading } = useSelector((state: RootState) => state.venues)
+  const { venues } = useSelector((state: RootState) => state.venues)
   
 
   return (

@@ -4,6 +4,7 @@
 @import './Footer';
 @import './Home';
 @import './Login';
+@import './Signup';
 @import './VenueCard';
 @import './GoogleMaps';
 @import './AllVenues';
@@ -12,6 +13,7 @@
 @import './Confirmation';
 @import './Profile';
 @import './BookingDetails';
+@import './FormInput';
 
 * {
   margin: 0;
@@ -26,6 +28,8 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  scroll-behavior: smooth;
 }
 
 // Containers
@@ -41,6 +45,10 @@ body {
   max-width: 100%;
   padding: 0 6rem;
   flex: 1;
+
+  @include for-mobile {
+    padding: 0 2rem;
+  }
 }
 
 .d-flex {
@@ -78,11 +86,19 @@ body {
 .heading-1 {
   font-size: $heading-1;
   font-weight: $type-bold;
+
+  @include for-mobile {
+    font-size: $mobile-heading-1;
+  }
 }
 
 .heading-2 {
   font-size: $heading-2;
   font-weight: $type-bold;
+
+  @include for-mobile {
+    font-size: $mobile-heading-2;
+  }
 }
 
 .heading-3 {
@@ -99,12 +115,21 @@ body {
   font-size: $type-body;
   font-weight: $type-regular;
   line-height: 34px;
+
+  @include for-mobile {
+    font-size: $mobile-type-body;
+    line-height: 26px;
+  }
 }
 
 .small {
   font-size: $type-small;
   font-weight: $type-regular;
   line-height: 23.8px;
+
+  @include for-mobile {
+    font-size: $mobile-type-small;
+  }
 }
 
 .link {

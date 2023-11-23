@@ -4,6 +4,7 @@ import venuesSlice from "./features/venues/venuesSlice";
 import venueSlice from "./features/venue/venueSlice";
 import bookingsSlice from "./features/bookings/bookingsSlice";
 import bookingSlice from "./features/booking/bookingSlice";
+import likesSlice from "./features/likes/likesSlice";
 
 export const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ export const store = configureStore({
     venues: venuesSlice,
     booking: bookingSlice,
     bookings: bookingsSlice,
+    likes: likesSlice
   }
 })
 

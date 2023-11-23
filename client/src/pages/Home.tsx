@@ -28,7 +28,7 @@ const Home = () => {
         <h2 className='body'>Welcome to TechSpace Stockholm!</h2>
       </div>
       <div className="popular-venues">
-        <h3>Popular Venues</h3>
+        <h3 className='heading-2'>Popular Venues</h3>
         <div className="venues">
           { error && <p>{error}</p>}
           { loading && <p>{loading}</p>}

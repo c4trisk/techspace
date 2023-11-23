@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Venue } from '../types'
 import GoogleMaps from './GoogleMaps'
 import { FaChevronCircleLeft, FaChevronCircleRight } from 'react-icons/fa'
+
 interface ImageCarouselProps {
   venue: Venue
 }

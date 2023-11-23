@@ -10,10 +10,11 @@ const Profile = () => {
   const dispatch: AppDispatch = useDispatch()
 
   const { bookings, error, loading } = useSelector((state: RootState) => state.bookings)
+  const { user } = useSelector((state: RootState) => state.auth)
 
   useEffect(() => {
     dispatch(getBoookings())
-  }, [bookings])
+  }, [user])
 
   const currentDate = new Date()
 
@@ -34,26 +35,29 @@ const Profile = () => {
       <section className="current-bookings">
         <div className="d-flex">
           <h2 className="heading-2">Current Bookings</h2>
-          <p className="small">{currentBookings.length} Bookings</p>
+          <p className="small">{currentBookings.length} {currentBookings.length === 1 ? 'Booking' : 'Bookings'}</p>
         </div>
         { error && <p>{error}</p> }
         { loading && <p>Loading...</p> }
-        { currentBookings.map(booking => <BookingCard key={booking._id} booking={booking} style={'current'} />) }
+        { currentBookings && currentBookings.map(booking => <BookingCard key={booking._id} booking={booking} style={'current'} />) }
       </section>
 
-      <section className="likes">
+      {/* <section className="likes">
         <div className="d-flex">
           <h2 className="heading-2">Liked Venues</h2>
           <p className="small">0 Likes</p>
         </div>
-      </section>
+        {
+          
+        }
+      </section> */}
 
       <section className="previous-bookings">
         <div className="d-flex">
           <h2 className='heading-2'>Previous Bookings</h2>
-          <p className="small">{previousBookings.length} Bookings</p>
+          <p className="small">{previousBookings.length} {previousBookings.length === 1 ? 'Booking' : 'Bookings'}</p>
         </div>
-        { previousBookings.map(booking => <BookingCard key={booking._id} booking={booking} style={'previous'} />) }
+        { previousBookings && previousBookings.map(booking => <BookingCard key={booking._id} booking={booking} style={'previous'} />) }
       </section>
     </div>
   )
