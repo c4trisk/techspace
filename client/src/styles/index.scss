@@ -74,11 +74,11 @@ body {
 // Buttons
 
 .btn-primary {
-  @include button($gradient-pink, $accent-color)
+  @include button($gradient-pink, $gradient-pink-hover)
 }
 
 .btn-secondary {
-  @include button($gradient-gray, $accent-color)
+  @include button($gradient-gray, $gradient-gray-hover)
 }
 
 // Type

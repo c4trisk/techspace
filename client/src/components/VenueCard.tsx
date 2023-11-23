@@ -68,12 +68,12 @@ const VenueCard: React.FC<VenueCardProps> = ({ venue }) => {
 
   return (
     venue &&
-    <div className='VenueCard'>
-      <Link to={`/venues/${venue.slug}`} className='card-link'>
-      <img src={venue.images[0]} alt={venue.venueName} />
-      <div className="overlay"></div>
-      <div className="dark-overlay"></div>
-      </Link>
+      <Link to={`/venues/${venue.slug}`} className='VenueCard'>
+        <div className="img">
+          <img src={venue.images[0]} alt={venue.venueName} />
+        </div>
+        <div className="overlay"></div>
+        <div className="dark-overlay"></div>
       <div className="like" >
         { isVenueLiked 
         ? <FaHeart />
@@ -93,9 +93,9 @@ const VenueCard: React.FC<VenueCardProps> = ({ venue }) => {
           <FaUser />
           <p className="small">{venue.capacity}</p>
         </div>
-        <p className="small">From SEK {venue.pricingInformation.pricePerHour}/h</p>
+        <p className="small">From SEK {(venue.pricingInformation.pricePerHour).toFixed(2)}/h</p>
       </div>
-    </div>
+      </Link>
   )
 }
 

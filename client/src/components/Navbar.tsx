@@ -35,8 +35,10 @@ const Navbar = () => {
       </div>
       <ul className='nav-links'>
         <li><NavLink to='/venues' className='nav-link heading-3'>All Venues</NavLink></li>
-        <li><HashLink to="/#about" className='nav-link heading-3'>About Us</HashLink></li>
-        
+        <li><HashLink 
+          to="/#about"
+          scroll={(el) => el.scrollIntoView({ behavior: 'smooth', block: 'end' })} 
+          className='nav-link heading-3'>About Us</HashLink></li>
           {
           user !== null
           ? <>
@@ -47,9 +49,7 @@ const Navbar = () => {
           }
           { showLoginModal && <Login /> }
           { showSignupModal && <Signup /> }
-          
       </ul>
-
     </nav>
   )
 }

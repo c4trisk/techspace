@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux'
 import { addBooking } from '../store/features/bookings/bookingsSlice'
 import { useNavigate } from 'react-router-dom'
 import { formatDate } from '../helpers/formatDate'
+import { formatPhone } from '../helpers/formatPhone'
 
 const ConfirmBooking = () => {
 
@@ -103,7 +104,7 @@ const ConfirmBooking = () => {
               </div>
               <div className="icon-group">
                 <FaTag className="icon" />
-                <p className="small">SEK {formData.subTotal},00</p>
+                <p className="small">SEK {(formData.subTotal).toFixed(2)}</p>
               </div>
               <div className="icon-group">
                 <FaConciergeBell className="icon" />
@@ -114,7 +115,7 @@ const ConfirmBooking = () => {
                 <h2 className="heading-2">Contact Person</h2>
                 <p className="heading-3">{venue.contactInformation.contactPerson.name}</p>
                 <p className="small disabled">{venue.contactInformation.contactPerson.email}</p>
-                <p className="small disabled">{venue.contactInformation.contactPerson.phone}</p>
+                <p className="small disabled">{formatPhone(venue.contactInformation.contactPerson.phone)}</p>
               </div>
           </div>
           <div className="info-card p-2">

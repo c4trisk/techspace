@@ -11,6 +11,8 @@ import iconDining from '../assets/icon-dining.png'
 import iconStanding from '../assets/icon-standing.png'
 import iconTheatre from '../assets/icon-theatre.png'
 import iconUshape from '../assets/icon-ushape.png'
+import { validateBookingForm } from '../helpers/validate'
+import { formatPhone } from '../helpers/formatPhone'
 
 
 const VenueDetails = () => {
@@ -20,7 +22,7 @@ const VenueDetails = () => {
   const { slug } = useParams()
   const { venue, loading, error } = useSelector((state: RootState) => state.venue)
 
-
+  const [showFormError, setShowFormError] = useState(false)
   const [isVenueLiked, setIsVenueLiked] = useState(false)
   const [showEquipmentList, setShowEquipmentList] = useState(false)
   const [selectedOptions, setSelectedOptions] = useState({
@@ -101,6 +103,11 @@ const VenueDetails = () => {
         subTotal: subTotal,
         slug: venue.slug
       }
+
+      const errors = validateBookingForm(formData, setShowFormError)
+      if(errors) {
+        return
+      }
   
       localStorage.setItem('bookingData', JSON.stringify(formData))
       navigate('/confirm')
@@ -118,7 +125,7 @@ const VenueDetails = () => {
             <h1 className='heading-1'>{venue.venueName}</h1>
             <h2 className='small'>{venue.address}, {venue.location}</h2>
           </div>
-          <div className="d-flex like" >
+          {/* <div className="d-flex like" >
             <p className="small">{isVenueLiked ? 'Liked' : 'Like'}</p>
             {
               isVenueLiked
@@ -126,7 +133,7 @@ const VenueDetails = () => {
               : <FaRegHeart />
             }
             
-          </div>
+          </div> */}
           </div>
           <ImageCarousel venue={venue} />
           <div className="main">
@@ -224,7 +231,7 @@ const VenueDetails = () => {
             <div className="right">
               <form className="bookingForm" onSubmit={handleSubmit}>
                 <h2 className='heading-1'>Book This Venue</h2>
-                <p className='small'>From SEK {venue.pricingInformation.pricePerHour}/hour</p>
+                <p className='small'>From SEK {(venue.pricingInformation.pricePerHour).toFixed(2)}/hour</p>
                 <div className="input-group">
                   <label htmlFor="date">Date</label>
                   <input type="date" name="date" id="date" value={selectedOptions.date} onChange={handleOptionChange} />
@@ -243,6 +250,9 @@ const VenueDetails = () => {
                     <option value="17-22">Evening: 17:00 - 22:00</option>
                   </select>
                 </div>
+                
+                { showFormError && <p className='error heading-2'>You need to fill in all booking fields.</p> }
+
                 <div className="checkbox-group">
                   <input type="checkbox" name="cateringAdded" id="cateringAdded" checked={selectedOptions.cateringAdded} onChange={handleOptionChange} />
                   <label htmlFor="cateringAdded">Add Catering to Booking</label>
@@ -251,19 +261,19 @@ const VenueDetails = () => {
                 <div className="pricing">
                   <div className="d-flex">
                     <p className="small disabled">SEK {venue.pricingInformation.pricePerHour} x {totalHours} hours</p>
-                    <p className="heading-3 disabled">SEK {venue.pricingInformation.pricePerHour * totalHours},00</p>
+                    <p className="heading-3 disabled">SEK {(venue.pricingInformation.pricePerHour * totalHours).toFixed(2)}</p>
                   </div>
                   { venue.pricingInformation.cleaningFee && <div className="d-flex">
                     <p className="small disabled">Cleaning Fee</p>
-                    <p className="heading-3 disabled">SEK {venue.pricingInformation.cleaningFee},00</p>
+                    <p className="heading-3 disabled">SEK {(venue.pricingInformation.cleaningFee).toFixed(2)}</p>
                   </div>}
                   <div className="d-flex">
                     <p className="small disabled">Admin Fee</p>
-                    <p className="heading-3 disabled">SEK {venue.pricingInformation.adminFee},00</p>
+                    <p className="heading-3 disabled">SEK {(venue.pricingInformation.adminFee).toFixed(2)}</p>
                   </div>
                   <div className="d-flex">
                     <p className="heading-2">Total Amount</p>
-                    <p className="heading-2">SEK {subTotal},00</p>
+                    <p className="heading-2">SEK {(subTotal).toFixed(2)}</p>
                   </div>
                 </div>
 
@@ -282,7 +292,7 @@ const VenueDetails = () => {
                   <h3 className="heading-2">Contact Person</h3>
                   <p className="heading-3">{venue.contactInformation.contactPerson.name}</p>
                   <p className="small disabled">{venue.contactInformation.contactPerson.email}</p>
-                  <p className="small disabled">{venue.contactInformation.contactPerson.phone}</p>
+                  <p className="small disabled">{formatPhone(venue.contactInformation.contactPerson.phone)}</p>
                 </div>
               </div>
 

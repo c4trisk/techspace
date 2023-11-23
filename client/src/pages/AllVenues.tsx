@@ -6,13 +6,14 @@ import VenueCard from '../components/VenueCard'
 import { Filters, Venue } from '../types'
 import { FaChevronDown, FaChevronRight } from 'react-icons/fa'
 import { LuSettings2 } from 'react-icons/lu'
+import { useLocation } from 'react-router-dom'
 
 const AllVenues = () => {
 
   const dispatch: AppDispatch = useDispatch()
   const { venues, error, loading } = useSelector((state: RootState) => state.venues)
   const [showOptions, setShowOptions] = useState(false)
-
+  
   const [filteredVenues, setFilteredVenues] = useState([])
   const [filters, setFilters] = useState<Filters>({
     date: '',
@@ -22,11 +23,29 @@ const AllVenues = () => {
     catering: '',
     breakoutRooms: '',
   })
-
+  
+  const location = useLocation()
+  const queryParams = new URLSearchParams(location.search)
+  const locationFilter = queryParams.get('location' || '')
+  const attendeesFilter = queryParams.get('attendees' || '')
 
   useEffect(() => {
     dispatch(getAllVenues())
   }, [])
+
+  // Checking for queryParams
+  useEffect(() => {
+    const [minCapacity, maxCapacity] = (attendeesFilter || '').split('-').map(Number);
+  
+    const tempFilteredVenues = venues.filter((venue: Venue) => {
+      const locationMatch = !locationFilter || venue.location === locationFilter;
+      const capacityMatch = !attendeesFilter || (venue.capacity >= minCapacity && venue.capacity <= maxCapacity);
+  
+      return (!locationFilter || locationMatch) && (!attendeesFilter || capacityMatch);
+    });
+  
+    setFilteredVenues(tempFilteredVenues);
+  }, [locationFilter, attendeesFilter, venues]);
 
   
   const handleSubmit = (e: React.FormEvent) => {

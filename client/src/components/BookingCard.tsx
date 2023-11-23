@@ -3,11 +3,15 @@ import { Booking } from '../types'
 import { formatDate } from '../helpers/formatDate'
 
 interface BookingCardProps {
-  booking: Booking
+  booking?: Booking
   style: string
 }
 
 const BookingCard: React.FC<BookingCardProps> = ({ booking, style }) => {
+
+  // Breaks site of not present...
+  if (!booking || !booking._id ||!booking.venue || !booking.venue.images) return null
+
   return (
     <Link to={`/booking/${booking._id}`} className={'BookingCard ' + style}>
       <div className="left">

@@ -13,8 +13,9 @@
   .venues {
     width: 100%;
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     margin-bottom: 3rem;
+    flex-wrap: wrap;
 
     @include for-mobile {
       flex-direction: column;

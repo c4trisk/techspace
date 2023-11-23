@@ -7,12 +7,13 @@ import { AppDispatch } from "../store";
 
 export const useAuthForm = (authFormData: User, action: Function) => {
 
+  
   const [errors, setErrors] = useState<AuthErrors>({})
   const [form, setForm] = useState({...authFormData})
   const [submitted, setSubmitted] = useState(false)
 
   const dispatch = useDispatch<AppDispatch>()
-
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { id, value } = e.target
     setForm(formData => {
@@ -25,9 +26,9 @@ export const useAuthForm = (authFormData: User, action: Function) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
+    
     if(!validate(form, setErrors)) return
-
+    
     const userData = {
       firstName: '',
       lastName: '',

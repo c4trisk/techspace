@@ -34,7 +34,7 @@ const Home = () => {
           { loading && <p>{loading}</p>}
           { venues.length > 0 && 
           <>
-            { venues.map((venue: Venue) => <VenueCard key={venue._id} venue={venue} />) }
+            { venues.slice(0,4).map((venue: Venue) => <VenueCard key={venue._id} venue={venue} />) }
           </>}
         </div>
         <Link to="venues" className='nav-btn btn-primary'>See All Venues</Link>

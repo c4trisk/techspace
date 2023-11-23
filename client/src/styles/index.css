@@ -490,9 +490,13 @@
   font-size: 1.7em;
   cursor: pointer;
 }
-.VenueCard img {
+.VenueCard .img {
   max-width: 100%;
   height: 12rem;
+}
+.VenueCard .img img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -611,8 +615,9 @@
 .AllVenues .venues {
   width: 100%;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 @media (max-width: 1000px) {
   .AllVenues .venues {
@@ -855,6 +860,10 @@
     gap: 2rem;
   }
 }
+.VenueDetails .error {
+  margin-top: 1rem;
+  color: rgb(165, 124, 124);
+}
 
 .ConfirmBooking h1 {
   margin-top: 2rem;
@@ -1020,6 +1029,7 @@
   overflow: hidden;
   text-decoration: none;
   color: #fff;
+  transition: all 0.2s ease-out;
 }
 @media (max-width: 1000px) {
   .BookingCard {
@@ -1073,6 +1083,10 @@
   background-color: #121212;
   color: #a3a3a3;
   border: 4px solid #252525;
+}
+
+.BookingCard:hover {
+  transform: scale(1.01);
 }
 
 .Profile {
@@ -1454,12 +1468,13 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
+  transition: background 0.3s ease-out;
 }
 .btn-primary:hover {
-  background: #ce6ad0;
+  background: linear-gradient(232deg, #C64FC8 -0.46%, #CE6AD0 46.2%, #DC84DE 89.11%);
 }
 .btn-primary:active {
-  background: #ce6ad0;
+  background: linear-gradient(232deg, #C64FC8 -0.46%, #CE6AD0 46.2%, #DC84DE 89.11%);
 }
 
 .btn-secondary {
@@ -1474,12 +1489,13 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
+  transition: background 0.3s ease-out;
 }
 .btn-secondary:hover {
-  background: #ce6ad0;
+  background: linear-gradient(254deg, #171717 11.07%, #252525 84.69%);
 }
 .btn-secondary:active {
-  background: #ce6ad0;
+  background: linear-gradient(254deg, #171717 11.07%, #252525 84.69%);
 }
 
 .heading-1 {

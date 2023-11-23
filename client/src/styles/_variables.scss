@@ -36,7 +36,11 @@ $text-color-disabled: #a3a3a3;
 $input-color: #171717;
 
 $gradient-pink: linear-gradient(232deg, #DC84DE -0.46%, #CE6AD0 46.2%, #C64FC8 89.11%);
+$gradient-pink-hover: linear-gradient(232deg, #C64FC8 -0.46%, #CE6AD0 46.2%, #DC84DE 89.11%);
+
 $gradient-gray: linear-gradient(254deg, #252525 11.07%, #171717 84.69%);
+$gradient-gray-hover: linear-gradient(254deg, #171717 11.07%, #252525 84.69%);
+
 $img-gradient: linear-gradient(180deg, rgba(26, 26, 26, 0.69) 27.49%, rgba(0, 0, 0, 0.00) 87.65%);
 
 // BORDER RADIUS
