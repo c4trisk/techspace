@@ -41,23 +41,3 @@ export const login = async (req: express.Request, res: express.Response) => {
   
   res.status(200).json(generateToken(user))
 }
-
-
-// Like Venue 
-
-// export const likeVenue = async (req: express.Request, res: express.Response) => {
-
-//   const { venueId } = req.body
-
-//   const user = await User.findById(req.params.id)
-
-//   if(!user) res.status(404).json({ message: "User not found" })
-
-//   if(!user.likedVenues.includes(venueId)) {
-//     user.likedVenues.push(venueId)
-//     user.save()
-//     return res.status(200).json(user)
-//   }
-  
-//   res.status(200).json(user)
-// }
